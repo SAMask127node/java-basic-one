@@ -39,7 +39,7 @@ public class MainApp {
     }
     public static void increaseArrElementsByNumber(int number, int[] arr) {
         for (int i=0; i<arr.length; i++){
-            arr[i] = arr[i]+number;
+            arr[i] += number;
         }
         System.out.println(Arrays.toString(arr));
     }
