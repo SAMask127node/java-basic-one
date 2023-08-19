@@ -83,7 +83,7 @@ public class MainApp {
         return max;
     }
     public static int row2Sum(int[][] arr2D) {
-        if (arr2D.length == 1){
+        if (arr2D.length < 2){
             return -1;
         }
 
