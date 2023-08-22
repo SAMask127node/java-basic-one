@@ -21,10 +21,10 @@ public class MainApp {
 
         Box box1 = new Box("box1",1,2,3,"Красный");
         box1.info();
-        box1.putIn();
+        box1.putIn("Predmet");
         box1.openCloseBox();
-        box1.putIn();
-        box1.putIn();
+        box1.putIn("Predmet");
+        box1.putIn("Predmet");
         box1.openCloseBox();
         box1.takeOut();
         box1.openCloseBox();
