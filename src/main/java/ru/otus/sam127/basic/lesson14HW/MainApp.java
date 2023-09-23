@@ -49,28 +49,30 @@ public class MainApp {
     }
 
     public static int sumOfElementsOf2DArray(String[][] strArray) {
-        int numberOfRows = strArray.length;
-        int numberOfColumns = strArray[0].length;
-
-        if (!(numberOfRows == 4 && numberOfColumns == 4)) {
+        if (strArray.length != 4) {
             throw new AppArraySizeException();
         }
-        int sum = 0;
-        int rowNumber = 0, columnNumber = 0;
-        int currentElement;
-        try {
-
-            for (int i = 0; i < numberOfRows - 1; i++) {
-                for (int j = 0; j < numberOfColumns - 1; j++) {
-                    rowNumber = i + 1;
-                    columnNumber = j + 1;
-                    currentElement = Integer.parseInt(strArray[i][j]);
-                    sum += currentElement;
-                }
+        for (String[] strings : strArray) {
+            if (strings.length != 4) {
+                throw new AppArraySizeException();
             }
-        } catch (NumberFormatException e) {
-            throw new AppArrayDataException(rowNumber, columnNumber);
         }
+
+        int sum = 0;
+        int currentElement;
+
+
+        for (int i = 0; i < strArray.length - 1; i++) {
+            for (int j = 0; j < strArray[i].length - 1; j++) {
+                try {
+                    currentElement = Integer.parseInt(strArray[i][j]);
+                } catch (NumberFormatException e) {
+                    throw new AppArrayDataException(i+1, j+1);
+                }
+                sum += currentElement;
+            }
+        }
+
         return sum;
     }
 }
